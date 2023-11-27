@@ -1,0 +1,8 @@
+<article>
+    <div class="title">{{ article.title }}</div>
+    <section>
+        <time class="subtitle" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+    </section>
+        {{ article.content }}
+    <div class="multilink"><a href="{{ SITE_URL }}/{{ article.url }}">permalink</a></div>
+</article>

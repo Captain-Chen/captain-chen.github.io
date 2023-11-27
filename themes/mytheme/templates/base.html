@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME|striptags }}{% endblock title %}</title>
+        <meta charset="utf-8">
+        <meta name="generator" content="Pelican" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="/theme/css/style.css">
+        <link rel="stylesheet" href="/theme/css/codehilite.css">
+        {% endblock head %}
+</head>
+<body>
+  <main>
+    <sidebar>
+      <aside>
+        <div id="avatar">
+          <a href="/"><img alt="avatar" src="/images/avatar.png"></a>
+        </div>
+        <div id="name">
+          <a href="/">{{ AUTHOR }}</a>
+        </div>
+        <div id="bio">{{ BIO_TEXT }}</div>
+        <nav>
+          <a href="/pages/about.html">about me</a>
+          <a href="/pages/projects.html">projects</a>
+          <a href="{{ GITHUB_URL }}" target="_blank">github</a>
+          <a href="/archives.html">archives</a>
+        </nav>
+      </aside>
+      <section class="content">
+        {% block content %}{% endblock %}
+        <hr>
+      </section>
+    </sidebar>
+    {% block pagination %}
+    {% endblock %}
+    <footer>
+      <p>This blog is powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a> and <a rel="nofollow" href="https://pages.github.com/">Github Pages</a></p>
+    </footer>
+  </main>
+</body>
+</html>
